@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class numToWords {
+
+    public static void main(String args[]) {
+
+        Scanner s = new Scanner(System.in);
+        int n = 0, n1, n2, n3, n4, n5;
+        System.out.println("Enter your Digits:");
+        n = s.nextInt();
+        String[] singledigits = new String[]{"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+
+        n1 = n / 10000 % 10;
+        n2 = n / 1000 % 10;
+        n3 = n / 100 % 10;
+        n4 = n / 10 % 10;
+        n5 = n % 10;
+
+        if (n < 20) {
+            System.out.println(singledigits[n5]);
+        } else if (n < 100) {
+            System.out.println(singledigits[n4] + " " + singledigits[n5]);
+        } else if (n < 1000) {
+
+            System.out.println(singledigits[n3] + " " + singledigits[n4] + " " + singledigits[n5]);
+        } else if (n < 10000) {
+
+            System.out.println(singledigits[n2] + " " + singledigits[n3] + " " + singledigits[n4] + " " + singledigits[n5]);
+        } else if (n < 100000) {
+            System.out.println(singledigits[n1] + " " + singledigits[n2] + " " + singledigits[n3] + " " + singledigits[n4] + " " + singledigits[n5]);
+        }
+    }
+}
